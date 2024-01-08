@@ -51,9 +51,9 @@
               <a class="nav-link" href="{% url 'logout_d' %}">LOGOUT</a>
             </li>
             {% endif %}
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="{% url 'articleshome' %}">ARTICLES</a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -68,16 +68,19 @@
     <footer class="footer section">
       <div class="footer-container dcontainer d-grid">
           <div>
+              {% if request.user.is_authenticated %}
+
               <h6 class="title footer-title">Useful Links</h6>
+              {% endif %}
               <ul class="list footer-list">
                   {% if request.user.is_authenticated %}
                   <li class="list-item">
                       <a href="{% url 'a_dashboard' %}" class="list-link">Dashboard</a>
                   </li>
                   {% endif %}
-                  <li class="list-item">
+                  <!-- <li class="list-item">
                       <a href="{% url 'articleshome' %}" class="list-link">Articles Forum</a>
-                  </li>
+                  </li> -->
                   {% if request.user.is_authenticated %}
                   <li class="list-item">
                       <a href="{% url 'a_profile' %}" class="list-link">Profile</a>
@@ -92,13 +95,11 @@
               <h6 class="title footer-title">Contact Us</h6>
               <ul class="list footer-list">
                   <li class="list-item">
-                      <a href="#" class="list-link">Phone :62894 03930</a>
+                      <a href="#" class="list-link">Phone : +65 85901196</a>
                   </li>
+
                   <li class="list-item">
-                      <a href="#" class="list-link">Whatsapp :62917 68037</a>
-                  </li>
-                  <li class="list-item">
-                      <a href="#" class="list-link">Email :group10@odas.com</a>
+                      <a href="#" class="list-link">Email : ywens98@gmail.com</a>
                   </li>
               </ul>
           </div>

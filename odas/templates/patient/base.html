@@ -25,7 +25,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="{% url 'index' %}">
+        <a class="navbar-brand" href="{% url 'index' %}" > 
           <img src="{% static 'doctor/imgs/ODAS_Logo.png' %}" alt="ODAS LOGO" class="logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,9 +58,9 @@
               <a class="nav-link" href="{% url 'logout_p' %}"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
             </li>
             {% endif %}
-            <li class="nav-item underlineable">
+            <!-- <li class="nav-item underlineable">
               <a class="nav-link" href="{% url 'articleshome' %}"><i class="fa-solid fa-newspaper"></i> Articles</a>
-            </li>
+            </li> -->
             {% if not request.user.is_authenticated %}
             <li class="nav-item">
               <a href="{% url 'index_d' %}" class="nav-link btn btn-light text-success doc-index-sender btn-sm">Are you a doctor ?</a>
@@ -80,16 +80,18 @@
     <footer class="bg-success section">
       <div class="footer-container pcontainer d-grid">
           <div>
+            {% if request.user.is_authenticated %}
               <h6 class="title footer-title">Useful Links</h6>
+            {% endif %}
               <ul class="footer-list">
                   {% if request.user.is_authenticated %}
                   <li class="list-item">
                       <a href="{% url 'a_dashboard' %}" class="list-link">Dashboard</a>
                   </li>
                   {% endif %}
-                  <li class="list-item">
+                  <!-- <li class="list-item">
                       <a href="{% url 'articleshome' %}" class="list-link">Articles Forum</a>
-                  </li>
+                  </li> -->
                   {% if request.user.is_authenticated %}
                   <li class="list-item">
                       <a href="{% url 'a_profile' %}" class="list-link">Profile</a>
@@ -104,13 +106,11 @@
               <h6 class="title footer-title">Contact Us</h6>
               <ul class="footer-list">
                   <li class="list-item">
-                      <a href="#" class="list-link">Phone :62894 03930</a>
+                      <a href="#" class="list-link">Phone : +65 85901196</a>
                   </li>
+
                   <li class="list-item">
-                      <a href="#" class="list-link">Whatsapp :62917 68037</a>
-                  </li>
-                  <li class="list-item">
-                      <a href="#" class="list-link">Email :group10@odas.com</a>
+                      <a href="#" class="list-link">Email : ywens98@gmail.com</a>
                   </li>
               </ul>
           </div>

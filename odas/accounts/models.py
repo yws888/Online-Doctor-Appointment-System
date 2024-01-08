@@ -24,7 +24,7 @@ class Doctor(User):
         ('Endocrinologist','Endocrinologist'),
         ('NeuroLogist','Neurologist'),
         ('Rheumatologist','Rheumatologist'),
-        ('Alergist','Allergist'),
+        ('Allergist','Allergist'),
         ('Psychiatrist','Psychiatrist'),
     ]
     gender = models.CharField(null = False, max_length=8, choices=CHOICES)
